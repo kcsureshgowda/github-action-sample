@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
     run-shell-command:
-        runs-on: ubuntu-latest
+        runs-on: windows-latest
         steps:
             - name: echo a string
               run: echo "hello world"
@@ -12,3 +12,12 @@ jobs:
               run: |
                   node -v
                   npm -v
+    
+    run-windows-command:
+        runs-on: windows-latest
+        steps:
+            - name: Directory powershell
+              run: Get-Location
+            - name: Directory bash
+              run: pwd
+              shell: bash
