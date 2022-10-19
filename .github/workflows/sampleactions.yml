@@ -1,6 +1,10 @@
 name: Sample GitHub Actions
 run-name: GitHub sample actions -  @${{ github.actor }}
-on: [push, pull_request]
+
+on: 
+  push:
+  pull_request: 
+    types: [closed, opened, assigned, labeled, reopened]
 jobs:
   run-on-github-actions:
     runs-on: ubuntu-latest
