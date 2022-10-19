@@ -4,7 +4,7 @@ run-name: GitHub sample actions -  @${{ github.actor }}
 on: 
   #push:
   schedule:
-    cron: "0/2 * * * *"
+    - cron: "0/2 * * * *"
 
   pull_request: 
     types: [closed, opened, assigned, labeled, reopened]
@@ -22,16 +22,16 @@ jobs:
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
 
-      #- name: Checkout Files
-       # uses: actions/checkout@v3
-        #with:
-         # repository: ''
-          #ref: ''
-          #token: ''
-          #ssh-key: ''
-          #ssh-known-hosts: ''
-          #path: ''
-          #clean: ''
+      - name: Checkout Files
+        uses: actions/checkout@v1
+        with:
+          repository: ''
+          ref: ''
+          token: ''
+          ssh-key: ''
+          ssh-known-hosts: ''
+          path: ''
+          clean: ''
       - name: List files after Checkout
         run: |
           pwd
