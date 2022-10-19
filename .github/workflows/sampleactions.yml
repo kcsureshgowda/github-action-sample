@@ -15,7 +15,7 @@ jobs:
       - name: List files after Checkout
         run: |
           pwd
-          ls
+          ls -a
           echo $GITHUB_SHA
 
       - name: Simple JS Action
