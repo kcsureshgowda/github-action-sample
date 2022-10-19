@@ -1,6 +1,14 @@
 name: Sample GitHub Actions
 run-name: GitHub sample actions -  @${{ github.actor }}
-on: [push, pull_request]
+
+on: 
+  #push:
+  schedule:
+    - cron: "0/2 * * * *"
+
+  pull_request: 
+    types: [closed, opened, assigned, labeled, reopened]
+
 jobs:
   run-on-github-actions:
     runs-on: ubuntu-latest
@@ -13,6 +21,7 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
+
       - name: Checkout Files
         uses: actions/checkout@v1
         with:
