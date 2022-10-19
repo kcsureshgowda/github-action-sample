@@ -15,11 +15,18 @@ jobs:
           echo "${{ github.token }}"
       - name: Checkout Files
         uses: actions/checkout@v1
+        with:
+          repository: ''
+          ref: ''
+          token: ''
+          ssh-key: ''
+          ssh-known-hosts: ''
+          path: ''
+          clean: ''
       - name: List files after Checkout
         run: |
           pwd
           ls -a
-          echo $GITHUB_SHA
 
       - name: Simple JS Action
         id: greet
