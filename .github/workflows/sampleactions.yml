@@ -3,7 +3,7 @@ run-name: GitHub sample actions -  @${{ github.actor }}
 on: [push]
 jobs:
   run-on-github-actions:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps: 
       - name: List Files
         run: |
