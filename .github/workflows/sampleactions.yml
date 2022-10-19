@@ -5,6 +5,19 @@ jobs:
   run-on-github-actions:
     runs-on: windows-latest
     steps: 
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+      - name: Checkout Files
+        uses: actions/checkout@v1
+      - name: List files after Checkout
+        run: |
+          pwd
+          ls
+          echo $GITHUB_SHA
+
       - name: Simple JS Action
         id: greet
         uses: actions/hello-world-javascript-action@v1
