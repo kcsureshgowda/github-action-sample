@@ -2,7 +2,9 @@ name: Sample GitHub Actions
 run-name: GitHub sample actions -  @${{ github.actor }}
 
 on: 
-  #push:
+  push:
+    branches:
+      - main
   #schedule:
   #  - cron: "0/5 * * * *"
   repository_dispatch:
