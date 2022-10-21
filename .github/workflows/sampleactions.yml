@@ -3,8 +3,8 @@ run-name: GitHub sample actions -  @${{ github.actor }}
 
 on: 
   #push:
-  schedule:
-    - cron: "0/5 * * * *"
+  #schedule:
+  #  - cron: "0/5 * * * *"
 
   pull_request: 
     types: [closed, opened, assigned, labeled, reopened]
